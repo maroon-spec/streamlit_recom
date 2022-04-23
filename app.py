@@ -26,7 +26,7 @@ def score_model(dataset):
 def render_response_image(i):
 #“””response is the returned JSON object. We can loop through this object and return the reshaped numpy array for each recommended image which can then be rendered”””
 
-    single_image_string = response[i]["0"]
+    single_image_string = ret[i]["0"]
     image_array = np.frombuffer(bytes.fromhex(single_image_string), dtype=np.float32)
     image_reshaped = np.reshape(image_array, (28,28))
     st.image(image_reshaped, width=100)
@@ -52,20 +52,20 @@ if img_file_buffer is not None:
     ret = score_model(df) 
 
     st.write("Recommended Items")
-    st.write(ret)
+    #st.write(ret)
 
-    #col0, col1, col2, col3, col4 = st.columns(5)
+    col0, col1, col2, col3, col4 = st.columns(5)
 
-    #with col0:
-    #    render_response_image(0)
-    #with col1:
-    #    render_response_image(1)
-    #with col2:
-    #    render_response_image(2)
-    #with col3:
-    #    render_response_image(3)
-    #with col4:
-    #    render_response_image(4)
+    with col0:
+        render_response_image(0)
+    with col1:
+        render_response_image(1)
+    with col2:
+        render_response_image(2)
+    with col3:
+        render_response_image(3)
+    with col4:
+        render_response_image(4)
 
 
     
