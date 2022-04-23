@@ -15,7 +15,7 @@ def create_tf_serving_json(data):
 
 def score_model(dataset):
   token = os.environ.get("DATABRICKS_TOKEN")
-  url = 'https://e2-demo-tokyo.cloud.databricks.com/model/jmaru_tfsim/2/invocations'
+  url = 'https://e2-demo-tokyo.cloud.databricks.com/model/jmaru_tfsim/1/invocations'
   headers = {'Authorization': f'Bearer {os.environ.get("DATABRICKS_TOKEN")}'}
   data_json = dataset.to_dict(orient='split') if isinstance(dataset, pd.DataFrame) else create_tf_serving_json(dataset)
   response = requests.request(method='POST', headers=headers, url=url, json=data_json)
