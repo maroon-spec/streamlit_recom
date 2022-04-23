@@ -52,20 +52,20 @@ if img_file_buffer is not None:
     ret = score_model(df) 
 
     st.write("Recommended Items")
+    st.write(response)
 
-    col0, col1, col2, col3, col4 = st.columns(5)
+    #col0, col1, col2, col3, col4 = st.columns(5)
 
-    with col0:
-        render_response_image(0)
-    
-    with col1:
-        render_response_image(1)
-    with col2:
-        render_response_image(2)
-    with col3:
-        render_response_image(3)
-    with col4:
-        render_response_image(4)
+    #with col0:
+    #    render_response_image(0)
+    #with col1:
+    #    render_response_image(1)
+    #with col2:
+    #    render_response_image(2)
+    #with col3:
+    #    render_response_image(3)
+    #with col4:
+    #    render_response_image(4)
 
 
     
