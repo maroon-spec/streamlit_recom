@@ -24,7 +24,7 @@ def score_model(dataset):
   return response.json()
 
 def render_response_image(i):
-“””response is the returned JSON object. We can loop through this object and return the reshaped numpy array for each recommended image which can then be rendered”””
+#“””response is the returned JSON object. We can loop through this object and return the reshaped numpy array for each recommended image which can then be rendered”””
 
     single_image_string = response[i]["0"]
     image_array = np.frombuffer(bytes.fromhex(single_image_string), dtype=np.float32)
