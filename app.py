@@ -52,7 +52,7 @@ if img_file_buffer is not None:
     ret = score_model(df) 
 
     st.write("Recommended Items")
-    st.write(response)
+    st.write(ret)
 
     #col0, col1, col2, col3, col4 = st.columns(5)
 
